@@ -130,7 +130,6 @@ def get_consultas():
         GROUP BY e.uf, e.nome_estado
         HAVING COUNT(DISTINCT eta.id_eta) > 0
         ORDER BY COUNT(DISTINCT eta.id_eta) DESC
-        LIMIT 15
         ''',
         
         'medicoes_ponto': '''
@@ -173,7 +172,6 @@ def get_consultas():
         GROUP BY r.nome_regiao, e.uf
         HAVING COUNT(med.id_medicao) > 0
         ORDER BY COUNT(med.id_medicao) DESC
-        LIMIT 20
         ''',
         
         'performance_instituicao': '''
@@ -192,7 +190,6 @@ def get_consultas():
         GROUP BY i.nome_instituicao, i.tipo_instituicao
         HAVING COUNT(med.id_medicao) > 1000
         ORDER BY COUNT(DISTINCT eta.id_eta) DESC
-        LIMIT 10
         ''',
         
         'analise_filtracao': '''
